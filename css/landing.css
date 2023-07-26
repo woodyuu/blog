@@ -27,7 +27,7 @@ section:not(.footer){
     width: 50%;
     font-size: 2rem;
     color: var(--primary-color);
-    transition: .7;
+    transition: .7s ease-out;
     /* border: 1px solid blue; */
 }
 .content p{
@@ -36,7 +36,7 @@ section:not(.footer){
     width: 50%;
     margin-left: auto;
     line-height: 2rem;
-    transition: .7;
+    transition: .7s ease-out;
     /* border: 1px solid black; */
 }
 .content button{
