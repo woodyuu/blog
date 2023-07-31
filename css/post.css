@@ -7,14 +7,11 @@
 .post-container .post-title input.dark,
 .post-container .post-contents textarea.dark,
 .post-container .post-tags input.dark,
-header .toolbox .color-box:nth-child(1).dark,
-header .toolbox .color-box:nth-child(2).dark,
-header .toolbox .font-box.dark,
-.link-tool .emoticon-box.dark{
+header .select-menu-dropdown.dark,
+header .select-menu-dropdown.dark::before
+/* header .toolbox .font-box.dark, */
+/*.link-tool .emoticon-box.dark*/{
     color: #fff;
-    background: #333;
-}
-.select-menu-dropdown.dark::before{
     background: #333;
 }
 
