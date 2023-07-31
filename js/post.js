@@ -15,8 +15,8 @@ window.addEventListener('load', (event) => {
     const colorBoxes = textTool.querySelectorAll('.text-tool .color-box')
     const fontBox = textTool.querySelector('.text-tool .font-box')    
     const emoticonBox = document.querySelector('.link-tool .emoticon-box')
-    const select = document.querySelector('.select-menu-dropdown')
-    let pageMode = false
+    const dropdowns = document.querySelectorAll('header .select-menu-dropdown')
+    // let pageMode = false
 
     mode.addEventListener('click', (event) => {
         document.body.classList.toggle('dark')
@@ -24,26 +24,21 @@ window.addEventListener('load', (event) => {
 
         title.classList.toggle('dark')
         postContents.classList.toggle('dark')
-        tagInput.classList.toggle('dark')        
+        tagInput.classList.toggle('dark')      
+                        
+        // fontBox.classList.toggle('dark') 
+        // emoticonBox.classList.toggle('dark')      
         
-        colorBoxes[0].classList.toggle('dark')
-        colorBoxes[1].classList.toggle('dark')
-
-        // console.log(colorBoxes[0], colorBoxes[1])
-        // for(let i = 0; i < colorBoxes.length; i++){
-        //     colorBoxes.classList.toggle('dark')
-        //     return i++
-        // }
-        fontBox.classList.toggle('dark') 
-        emoticonBox.classList.toggle('dark')       
-        select.classList.toggle('dark')
-
         for(const icon of icons){
             icon.classList.contains('active') ?
             icon.classList.remove('active')
             : icon.classList.add('active')
         }
-        pageMode != pageMode
+
+        for(const dropdown of dropdowns){
+            dropdown.classList.toggle('dark')
+        }
+        // pageMode != pageMode
     })
 
     //태그입력 기능
@@ -172,9 +167,9 @@ window.addEventListener('load', (event) => {
                 hideDropdown(toolBox, 'format_color_text') // 다크모드 제거
                 colorBoxes[0].classList.toggle('show')
                 // 다크모드 추가 
-                pageMode ? 
-                colorBoxes[0].classList.add('dark'):
-                colorBoxes[0].classList.remove('dark')
+                // pageMode ? 
+                // colorBoxes[0].classList.add('dark'):
+                // colorBoxes[0].classList.remove('dark')
                 break 
             case 'format_color_fill':
                 // changeTextFormat('backColor', 'black')
@@ -290,12 +285,7 @@ function hideDropdown(toolbox, currentDropdown){
     !== currentDropdown){
     dropdown.classList.remove('show')
     // dropdown.classList.remove('dark')  
-    }
-
-    // const colorBoxes = toolbox.querySelectorAll('.text-tool color-box')
-    // if(colorBoxes && colorBoxes.parentElement.querySelector('a span').innerText
-    // !== currentDropdown)
-    // colorBoxes.classList.remove('dark')
+    }    
 }
 
 document.addEventListener('click', function(e){
